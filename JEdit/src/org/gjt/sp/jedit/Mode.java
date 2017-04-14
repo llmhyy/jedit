@@ -60,7 +60,7 @@ public class Mode
 	{
 		this.name = name;
 		this.ignoreWhitespace = true;
-		props = new Hashtable<>();
+		props = new Hashtable();
 	} //}}}
 
 	//{{{ init() method

@@ -51,9 +51,9 @@ class PluginList
 	public static final int GZIP_MAGIC_2 = 0x8b;
 	public static final long MILLISECONDS_PER_MINUTE = 60L * 1000L;
 
-	final List<Plugin> plugins = new ArrayList<>();
-	final Map<String, Plugin> pluginHash = new HashMap<>();
-	final List<PluginSet> pluginSets = new ArrayList<>();
+	final List<Plugin> plugins = new ArrayList();
+	final Map<String, Plugin> pluginHash = new HashMap();
+	final List<PluginSet> pluginSets = new ArrayList();
 
 	/**
 	 * The mirror id.
@@ -289,7 +289,7 @@ class PluginList
 	static class PluginSet
 	{
 		String name;
-		final List<String> plugins = new ArrayList<>();
+		final List<String> plugins = new ArrayList();
 
 		public String toString()
 		{
@@ -304,7 +304,7 @@ class PluginList
 		String name;
 		String description;
 		String author;
-		final List<Branch> branches = new ArrayList<>();
+		final List<Branch> branches = new ArrayList();
 		//String installed;
 		//String installedVersion;
 
@@ -451,7 +451,7 @@ class PluginList
 		int downloadSourceSize;
 		String downloadSource;
 		boolean obsolete;
-		final List<Dependency> deps = new ArrayList<>();
+		final List<Dependency> deps = new ArrayList();
 
 		boolean canSatisfyDependencies()
 		{

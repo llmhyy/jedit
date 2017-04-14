@@ -3776,7 +3776,7 @@ public class jEdit
 	/**
 	 * Sets the Swing look and feel.
 	 */
-	private static void initPLAF()
+	public static void initPLAF()
 	{
 		String lf = getProperty("lookAndFeel");
 		final String sLf = getPLAFClassName(lf);
@@ -3845,7 +3845,7 @@ public class jEdit
 			{
 				UIManager.setLookAndFeel(sLf);
 			}
-			catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) 
+			catch (Exception e) 
 			{
 				// ignored, there really isn't anything to do and this may be
 				// bogus, the lnf may be from the Look And Feel plugin
@@ -3864,7 +3864,7 @@ public class jEdit
 							{
 								UIManager.setLookAndFeel(sLf);
 							}
-							catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException e) 
+							catch (Exception e) 
 							{
 								// same as above, there really isn't anything to do and this may be
 								// bogus, the lnf may be from the Look And Feel plugin
@@ -3873,7 +3873,7 @@ public class jEdit
 					}
 				);
 			}
-			catch (InterruptedException | InvocationTargetException e) 
+			catch (Exception e) 
 			{
 				// don't worry about this one either	
 			}

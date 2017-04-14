@@ -61,10 +61,10 @@ public class ShortcutsOptionPane extends AbstractOptionPane
 	} //}}}
 
 	//{{{ _init() method
-	@Override
+//	@Override
 	protected void _init()
 	{
-		allBindings = new Vector<>();
+		allBindings = new Vector();
 
 		setLayout(new BorderLayout(12, 12));
 
@@ -84,7 +84,7 @@ public class ShortcutsOptionPane extends AbstractOptionPane
 		ActionListener actionHandler = new ActionHandler();
 
 		ComboBoxModel<String> model = new KeymapsModel();
-		keymaps = new JComboBox<>(model);
+		keymaps = new JComboBox(model);
 		keymaps.setRenderer(new KeymapCellRenderer());
 		keymaps.setSelectedItem(keymapName);
 		duplicateKeymap.addActionListener(actionHandler);
@@ -103,7 +103,7 @@ public class ShortcutsOptionPane extends AbstractOptionPane
 		keymapBox.add(deleteKeymap);
 
 		// combobox to choose action set
-		selectModel = new JComboBox<>(models);
+		selectModel = new JComboBox(models);
 		selectModel.addActionListener(actionHandler);
 		selectModel.setToolTipText(jEdit.getProperty("options.shortcuts.select.tooltip"));
 		Box north = Box.createHorizontalBox();
@@ -232,7 +232,7 @@ public class ShortcutsOptionPane extends AbstractOptionPane
 				return name.contains(filter);
 			}
 		};
-		models = new Vector<>();
+		models = new Vector();
 		reloadModels();
 	} //}}}
 
@@ -241,8 +241,8 @@ public class ShortcutsOptionPane extends AbstractOptionPane
 	{
 		models.clear();
 		allBindings.clear();
-		List<KeyBinding[]> allBindings = new ArrayList<>();
-		Collection<String> knownBindings = new HashSet<>();
+		List<KeyBinding[]> allBindings = new ArrayList();
+		Collection<String> knownBindings = new HashSet();
 		ActionSet[] actionSets = jEdit.getActionSets();
 		for (ActionSet actionSet : actionSets)
 		{
@@ -295,7 +295,7 @@ public class ShortcutsOptionPane extends AbstractOptionPane
 	//{{{ createModel() method
 	private ShortcutsModel createModel(String actionSet, String modelLabel, String[] actions)
 	{
-		List<KeyBinding[]> bindings = new ArrayList<>(actions.length);
+		List<KeyBinding[]> bindings = new ArrayList(actions.length);
 
 		for (String name : actions)
 		{

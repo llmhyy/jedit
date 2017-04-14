@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src"/>
+	<classpathentry excluding="doc/FAQ/|doc/tips/|doc/whatsnew/|macros/C/|macros/Clipboard/|macros/Editing/|macros/Emacs/|macros/Files/|macros/Interface/|macros/Java/|macros/Misc/|macros/Properties/|macros/Text/|misc/debug/|misc/indentation_problems/|misc/mode_lint/" kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
 	<classpathentry kind="lib" path="lib/ant.jar"/>
 	<classpathentry kind="output" path="bin"/>
